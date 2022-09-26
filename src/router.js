@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './components/PageHome.vue'
 import Works from './components/WorksView.vue'
 // import Work2 from './components/Work2View.vue'
-import Skill from './components/SkillView.vue'
+import Skills from './components/SkillView.vue'
 // import Contact from './components/ContactView.vue'
 
 Vue.use(Router)
@@ -12,14 +12,18 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+      {
+     path: '/',
+     redirect: { name: 'Home' }
+   },
     {
-      path: '/',
-      name: 'home',
+      path: '/portfolio/',
+      name: 'Home',
       component: Home
     },
     {
-      path: '/Works',
-      name: 'works',
+      path: '/portfolio/Works',
+      name: 'Works',
       component: Works
     },
     // {
@@ -28,9 +32,9 @@ export default new Router({
     //   component: Work2
     // },
     {
-      path: '/Skill',
-      name: 'skill',
-      component: Skill
+      path: '/portfolio/Skills',
+      name: 'Skills',
+      component: Skills
     },
     // {
     //   path: '/Contact',

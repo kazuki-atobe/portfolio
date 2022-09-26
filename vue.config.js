@@ -1,8 +1,9 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-    outputDir: 'docs',
-    // assetsDir: '/portfolio.git.io/',
-    publicPath: '/portfolio/',
+    // outputDir: 'docs',
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/portfolio/'
+    : '/',
     transpileDependencies: [
         'vuetify'
     ]

@@ -5,10 +5,10 @@
             <v-app-bar-nav-icon v-if="$vuetify.breakpoint.xs" @click="drawer = true"></v-app-bar-nav-icon>
             <v-toolbar-title>Portfolio</v-toolbar-title>
             <v-tabs v-if="!$vuetify.breakpoint.xs" right color="#4b0082">
-                <v-tab to="/" exact>Home</v-tab>
-                <v-tab to="/Works" exact>Works</v-tab>
+                <v-tab to="/portfolio/" exact>Home</v-tab>
+                <v-tab to="/portfolio/Works" exact>Works</v-tab>
                 <!-- <v-tab to="/Work2" exact>Work2</v-tab> -->
-                <v-tab to="/Skill" exact>Skills</v-tab>
+                <v-tab to="/portfolio/Skills" exact>Skills</v-tab>
                 <!-- <v-tab to="/Contact" exact>Contact</v-tab> -->
             </v-tabs>
         </v-app-bar>
@@ -25,7 +25,7 @@
                     <!-- <v-list-item to="/Work2">
                         <v-list-item-title>Work2</v-list-item-title>
                     </v-list-item> -->
-                    <v-list-item to="/Skill">
+                    <v-list-item to="/Skills">
                         <v-list-item-title>Skills</v-list-item-title>
                     </v-list-item>
                     <!-- <v-list-item to="/Contact">
