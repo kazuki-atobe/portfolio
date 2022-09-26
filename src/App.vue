@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+     <v-app>
+        <HeaderView />
+
+        <v-main>
+            <router-view />
+        </v-main>
+
+    </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderView from './components/HeaderView';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    HeaderView,
+  },
+};
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang="scss">
+    main {
+        background-image: repeating-radial-gradient(circle at 30% 72%, rgba(224, 242, 242, 1), rgba(235, 235, 235, 1) 0%, rgba(233, 233, 233, 1) 12%, rgba(218, 218, 218, 1) 24%);
+        background-attachment: fixed;
+        color: #808080;
+    }
+
+    
 </style>
