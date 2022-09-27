@@ -16,16 +16,16 @@
         <v-navigation-drawer v-model="drawer" absolute temporary>
             <v-list nav dense>
                 <v-list-item-group v-model="selectedItem" color="#4b0082">
-                    <v-list-item to="/">
+                    <v-list-item to="/portfolio/">
                         <v-list-item-title>Home</v-list-item-title>
                     </v-list-item>
-                    <v-list-item to="/Works">
+                    <v-list-item to="/portfolio/Works">
                         <v-list-item-title>Works</v-list-item-title>
                     </v-list-item>
                     <!-- <v-list-item to="/Work2">
                         <v-list-item-title>Work2</v-list-item-title>
                     </v-list-item> -->
-                    <v-list-item to="/Skills">
+                    <v-list-item to="/portfolio/Skills">
                         <v-list-item-title>Skills</v-list-item-title>
                     </v-list-item>
                     <!-- <v-list-item to="/Contact">
