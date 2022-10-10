@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './components/PageHome.vue'
+import Home from './components/HomeView.vue'
 import Works from './components/WorksView.vue'
 // import Work2 from './components/Work2View.vue'
 import Skills from './components/SkillView.vue'

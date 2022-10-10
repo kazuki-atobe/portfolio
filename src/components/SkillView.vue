@@ -29,6 +29,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    .container {
+        @media screen and (min-width: 1904px) {
+            width: 1195px;
+        }
+    }
     .v-card {
         padding: 20px;
     }
@@ -42,7 +47,7 @@ export default {
         position: relative;
         margin-bottom: 80px;
         span {
-            color: #4b0082
+            color: #4b0082;
         }
         &:after {
             content:'';

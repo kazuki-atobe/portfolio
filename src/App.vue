@@ -13,10 +13,10 @@
 import HeaderView from './components/HeaderView';
 
 export default {
-  name: 'App',
-  components: {
-    HeaderView,
-  },
+    name: 'App',
+    components: {
+        HeaderView,
+    },
 };
 </script>
 
@@ -26,6 +26,4 @@ export default {
         background-attachment: fixed;
         color: #808080;
     }
-
-    
 </style>
