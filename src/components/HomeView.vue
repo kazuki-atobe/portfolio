@@ -38,7 +38,7 @@
     }
     .main-title {
         margin-top: -30px;
-        z-index: 1; /* パーティクルの上に表示 */
+        z-index: 1; // パーティクルの上に表示
     }
     h1, h2 {
         text-shadow: 3px 3px 2px rgba(0,0,0,0.3);
