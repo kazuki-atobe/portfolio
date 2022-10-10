@@ -47,7 +47,7 @@ export default {
         position: relative;
         margin-bottom: 80px;
         span {
-            color: #4b0082
+            color: #4b0082;
         }
         &:after {
             content:'';
