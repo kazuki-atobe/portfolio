@@ -22,6 +22,7 @@
 import BarChart from './BarChart';
 
 export default {
+    name: 'SkillView',
     components: {
         BarChart
     }

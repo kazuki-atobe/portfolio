@@ -1,98 +1,94 @@
 <template>
     <v-container pa-10 mt-10>
         <h1 class="text-h3 text-center"><span>W</span>orks</h1>
-
-        <h2 class="text-h5 font-weight-bold">ソーシャルゲームのサーバーサイド開発</h2>
-
-        <p class="text-h6">DB設計、プログラミング、管理ツール作成を担当<br>▼開発に携わったタイトル▼</p>
-        <v-row>
-            <v-col cols="12" sm="6">
-                <v-img src="../assets/img_a3.jpeg" max-height="304" max-width="540"></v-img>
-            </v-col>
-            <v-col cols="12" sm="6">
-                <v-img src="../assets/img_ichu.jpeg" max-height="304" max-width="540"></v-img>
-            </v-col>
-        </v-row>
-
-        <h2 class="text-h5 font-weight-bold">ホームページのリニューアル</h2>
-        <p class="text-h6">デザイン、コーディングを担当</p>
-        <v-row>
-            <v-hover v-slot="{ hover }">
-                <v-col cols="12" sm="6">
-                    <v-img src="../assets/img_anet.png" max-height="304" max-width="540">
-                        <v-expand-transition>
-                            <a
-                                v-if="hover"
-                                class="hover-link d-flex transition-fast-in-fast-out"
-                                href="https://www.advancednet.co.jp/"
-                            >
-                                HPを見る
-                            </a>
-                        </v-expand-transition>
-                    </v-img>
-                </v-col>
-            </v-hover>
-        </v-row>
-
-        <h2 class="text-h5 font-weight-bold">コーポレートサイト制作</h2>
-        <p class="text-h6">デザイン、コーディング、CMSプログラム組込みを担当</p>
-        <v-row>
-            <v-hover v-slot="{ hover }">
-                <v-col cols="12" sm="6">
-                    <v-img src="../assets/img_cubic.png" max-height="304" max-width="540">
-                        <v-expand-transition>
-                            <a
-                                v-if="hover"
-                                class="hover-link d-flex transition-fast-in-fast-out"
-                                href="https://www.cubic-gr.co.jp/"
-                            >
-                                HPを見る
-                            </a>
-                        </v-expand-transition>
-                    </v-img>
-                </v-col>
-            </v-hover>
-            <v-hover v-slot="{ hover }">
-                <v-col cols="12" sm="6">
-                    <v-img src="../assets/img_saibou.png" max-height="304" max-width="540">
-                        <v-expand-transition>
-                            <a
-                                v-if="hover"
-                                class="hover-link d-flex transition-fast-in-fast-out"
-                                href="http://www.saibouyoku-hide.com/"
-                            >
-                                HPを見る
-                            </a>
-                        </v-expand-transition>
-                    </v-img>
-                </v-col>
-            </v-hover>
-            <v-hover v-slot="{ hover }">
-                <v-col cols="12" sm="6">
-                    <v-img src="../assets/img_bakery.png" max-height="304" max-width="540">
-                        <v-expand-transition>
-                            <a
-                                v-if="hover"
-                                class="hover-link d-flex transition-fast-in-fast-out"
-                                href="https://www.bakerychamp.biz/"
-                            >
-                                HPを見る
-                            </a>
-                        </v-expand-transition>
-                    </v-img>
-                </v-col>
-            </v-hover>
-        </v-row>
+        
+        <div v-for="(workItem, i) in workItems" :key=i>
+            <h2>{{ workItem.title }}</h2>
+            <p>{{ workItem.content }}</p>
+            
+            <div v-if="workItem.link">
+                <v-row>
+                    <v-hover v-for="(img, i) in workItem.imgs" :key=i v-slot="{ hover }">
+                        <v-col cols="12" sm="6">
+                            <v-img :src="imgPath(img.path)" max-height="304" max-width="540">
+                                <v-expand-transition>
+                                    <a
+                                        v-if="hover"
+                                        class="hover-link d-flex transition-fast-in-fast-out"
+                                        :href=img.url
+                                    >
+                                        HPを見る
+                                    </a>
+                                </v-expand-transition>
+                            </v-img>
+                        </v-col>
+                    </v-hover>
+                </v-row>
+            </div>
+            <div v-else>
+                <v-row>
+                    <v-col v-for="(img, i) in workItem.imgs" :key=i cols="12" sm="6">
+                        <v-img :src="imgPath(img.path)" max-height="304" max-width="540"></v-img>
+                    </v-col>
+                </v-row>
+            </div>
+        </div>
     </v-container>
 </template>
 
 <script>
 export default {
-    head: {
-        link: [
-            { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css' },
-        ]
+    name: 'WorkView',
+    data () {
+        return {
+            workItems: [
+                {
+                    title: 'ソーシャルゲームのサーバーサイド開発',
+                    content: 'DB設計、プログラミング、管理ツール作成を担当',
+                    link: false,
+                    imgs: [
+                        { path: 'img_a3.jpeg' },
+                        { path: 'img_ichu.jpeg' }
+                    ]
+                },
+                {
+                    title: 'ホームページのリニューアル',
+                    content: 'デザイン、コーディングを担当',
+                    link: true,
+                    imgs: [
+                        {
+                            path: 'img_anet.png',
+                            url: 'https://www.advancednet.co.jp/'
+                        }
+                    ]
+                },
+                {
+                    title: 'コーポレートサイト制作',
+                    content: 'デザイン、コーディング、CMSプログラム組込みを担当',
+                    link: true,
+                    imgs: [
+                        {
+                            path: 'img_cubic.png',
+                            url: 'https://www.cubic-gr.co.jp/'
+                        },
+                        {
+                            path: 'img_saibou.png',
+                            url: 'http://www.saibouyoku-hide.com/'
+                        },
+                        {
+                            path: 'img_bakery.png',
+                            url: 'https://www.bakerychamp.biz/'
+                        }
+                    ]
+                }
+            ]
+        }
     },
+    methods:{
+        imgPath(path){
+            return require(`@/assets/${path}`)
+        }
+    }
 }
 </script>
 
@@ -125,6 +121,7 @@ export default {
         padding-left: 10px;
         position: relative;
         color: #808080;
+        font-size: clamp(18px, 4vw, 24px);
         &:after {
             content: '';
             width: 3px;
@@ -134,6 +131,9 @@ export default {
             left: 0;
             background-color: #4b0082;
         }
+    }
+    p {
+        font-size: clamp(16px, 4vw, 24px);
     }
     .row {
         margin-bottom: 60px;
